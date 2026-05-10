@@ -12,6 +12,7 @@ import java.util.Optional;
 
 public interface TodoRepository extends JpaRepository<Todo, Long> {
 
+    // fetch join 대신 @EntityGraph 사용 - 페이징과 함께 사용해도 안전하게 user 정보를 함께 조회
     @EntityGraph(attributePaths = {"user"})
     Page<Todo> findAllByOrderByModifiedAtDesc(Pageable pageable);
 

@@ -13,6 +13,10 @@ import org.springframework.web.context.request.NativeWebRequest;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.method.support.ModelAndViewContainer;
 
+/**
+ * Spring Bean으로 등록하여 ArgumentResolver로 동작하도록 @Component 어노테이션 추가
+ */
+
 @Component
 public class AuthUserArgumentResolver implements HandlerMethodArgumentResolver {
 

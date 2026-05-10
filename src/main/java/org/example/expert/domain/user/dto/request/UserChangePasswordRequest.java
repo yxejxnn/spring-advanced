@@ -15,6 +15,7 @@ public class UserChangePasswordRequest {
     @NotBlank
     private String oldPassword;
 
+    // 비밀번호 유효성 검사를 서비스 레이어가 아닌 DTO에서 처리하도록 개선
     @NotBlank
     @Size(min = 8, message = "새 비밀번호는 8자 이상이어야 합니다.")
     @Pattern(regexp = "^(?=.*[A-Z])(?=.*\\\\d).+$", message = "새 비밀번호는 숫자와 대문자를 포함해야 합니다.")

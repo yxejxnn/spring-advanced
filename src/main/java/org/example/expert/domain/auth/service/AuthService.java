@@ -26,6 +26,7 @@ public class AuthService {
     @Transactional
     public SignupResponse signup(SignupRequest signupRequest) {
 
+        // 이메일 중복 체크를 먼저 수행해서 불필요한 passwordEncoder.encode() 호출 방지 (Early Return)
         if (userRepository.existsByEmail(signupRequest.getEmail())) {
             throw new InvalidRequestException("이미 존재하는 이메일입니다.");
         }
